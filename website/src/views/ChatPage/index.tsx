@@ -2,6 +2,9 @@ import { useState } from "react"
 import { Message } from "./types"
 import { Bubble, Sender } from "@ant-design/x";
 import { sendMessage } from "../../request/chat";
+import Markdown from "react-markdown";
+import rehypeHighlight from 'rehype-highlight';
+import remarkGfm from 'remark-gfm';
 
 const sleep = (time = 300) => new Promise(resolve => setTimeout(resolve, time))
 
@@ -15,7 +18,12 @@ const ChatPage = () => {
             {chatList.map((item, index) => (
                 <Bubble
                     key={index}
-                    content={item.content}
+                    content={
+                        <Markdown
+                            remarkPlugins={[remarkGfm]}
+                            rehypePlugins={[rehypeHighlight]}
+                        >{item.content}</Markdown>
+                    }
                     placement={item.isUser ? "end" : "start"}
                     loading={item.isLoading}
                     avatar={item.isUser ? <div>User</div> : <div>GPT</div>}
