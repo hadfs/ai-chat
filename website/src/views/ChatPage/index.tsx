@@ -28,6 +28,9 @@ const ChatPage = () => {
                     loading={item.isLoading}
                     avatar={item.isUser ? <div>User</div> : <div>GPT</div>}
                     typing={true}
+                    style={{
+                        maxWidth: '400px'
+                    }}
                 />
             ))}
             <Sender
