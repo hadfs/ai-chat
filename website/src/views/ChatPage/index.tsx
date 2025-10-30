@@ -6,7 +6,6 @@ import Markdown from "react-markdown";
 import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
 
-const sleep = (time = 300) => new Promise(resolve => setTimeout(resolve, time))
 
 const ChatPage = () => {
     const [chatList, setChatList] = useState<Message[]>([]);

@@ -12,3 +12,10 @@ export const sendMessage = (data: {
         data,
     })
 }
+
+export const getModels = () => {
+    return request({
+        url: '/models',
+        method: 'get'
+    })
+}

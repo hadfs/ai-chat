@@ -15,4 +15,15 @@ export class AppController {
   async chat(@Body() body: any) {
     return this.chatService.chat(body)
   }
+
+  @Get('/models')
+  async models() {
+    const result = await  this.chatService.getModelList()
+    if (result) {
+      return {
+        data: result
+      }
+    }
+    return null
+  }
 }
