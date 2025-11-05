@@ -1,11 +1,14 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import ChatPage from "./views/ChatPage"
+
+const queryClient = new QueryClient()
 
 function App() {
 
   return (
-    <div>
+    <QueryClientProvider client={queryClient}>
       <ChatPage />
-    </div>
+    </QueryClientProvider>
   )
 }
 

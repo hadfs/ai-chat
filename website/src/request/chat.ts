@@ -14,7 +14,7 @@ export const sendMessage = (data: {
 }
 
 export const getModels = () => {
-    return request({
+    return request<{ id: string }[]>({
         url: '/models',
         method: 'get'
     })

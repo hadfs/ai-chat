@@ -12,11 +12,13 @@
   "dependencies": {
     "@ant-design/x": "^1.6.1",
     "@tanstack/react-query": "^5.90.5",
+    "antd": "^5.27.6",
     "axios": "^1.13.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-markdown": "^10.1.0",
     "rehype-highlight": "^7.0.2",
+    "remark-breaks": "^4.0.0",
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
